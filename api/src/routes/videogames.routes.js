@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { Router } = require("express");
-const axios = require("axios");
+const axios = require("axios").default;
 
 const { Videogame, Genre } = require("../db");
 
@@ -17,8 +17,7 @@ router.get("/", async (req, res) => {
   });
 
   //Parseo el objeto a string y luego lo parseo a un objeto de js
-  videogames = JSON.stringify(videogames);
-  videogames = JSON.parse(videogames);
+  videogames = JSON.parse(JSON.stringify(videogames));
 
   //Aca dejo el arreglo de generos plano con solo los nombres de cada genero(llega array de objetos)
   videogames = videogames.reduce(
@@ -74,6 +73,7 @@ router.get("/", async (req, res) => {
         `https://api.rawg.io/api/games?key=${API_KEY}`
       );
 
+      //itero y lleno el array
       while (pages < 6) {
         pages++;
         //filtro solo la DATA que necesito enviar al FRONT
@@ -90,6 +90,7 @@ router.get("/", async (req, res) => {
         results = [...results, ...allGamesArr];
         response = await axios.get(response.data.next); //Paso a la siguiente pagina con next
       }
+
       return res.json(results);
     } catch (err) {
       console.error(err.message);
@@ -103,6 +104,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let { name, description, releaseDate, rating, genres, platforms } = req.body;
   platforms = platforms.join(", ");
+  
   try {
     const gameCreated = await Videogame.findOrCreate({
       //devuelvo un array (OJOOO!!!!)
