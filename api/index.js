@@ -19,6 +19,9 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
+const axios = require('axios');
+
+axios.defaults.baseURL = 'http://localhost:3001';
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
