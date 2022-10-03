@@ -1,0 +1,46 @@
+.container {
+    height: 100%;
+
+    background-image: url(../../img/neon-joystick.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 40%;
+    height: 40%;
+    background-color: transparent;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title {
+    text-align: center;
+    color: #e4dcdc;
+    font-size: 40px;
+}
+
+.btn {
+    padding: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e4dcdc;
+}
