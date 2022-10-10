@@ -1,8 +1,8 @@
 require("dotenv").config();
 const { Router } = require("express");
-const axios = require("axios").default;
+const axios = require("axios");
 
-const { Videogame, Genre } = require("../db");
+const { Videogame, Genre } = require("../db.js");
 
 const { API_KEY } = process.env;
 
@@ -14,7 +14,7 @@ const router = Router();
 router.get("/:idVideogame", async (req, res) => {
   const { idVideogame } = req.params;
 
-  //verifico si es un juego creado y me traigo el detalle de la base de datos
+  //verifico si es un juego creado y me traigo el detalle de la base de datos. Ejemplo de id de DB ->  6f47bafd-6073-48ca-b0af-826a901e7ec5
   if (idVideogame.includes("-")) {
     let videogameDb = await Videogame.findOne({
       where: {

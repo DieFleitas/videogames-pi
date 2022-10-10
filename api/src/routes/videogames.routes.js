@@ -1,8 +1,8 @@
 require("dotenv").config();
 const { Router } = require("express");
-const axios = require("axios").default;
+const axios = require("axios");
 
-const { Videogame, Genre } = require("../db");
+const { Videogame, Genre } = require("../db.js");
 
 const { API_KEY } = process.env;
 
@@ -73,7 +73,7 @@ router.get("/", async (req, res) => {
         `https://api.rawg.io/api/games?key=${API_KEY}`
       );
 
-      //itero y lleno el array
+      //ítero y lleno el array
       while (pages < 6) {
         pages++;
         //filtro solo la DATA que necesito enviar al FRONT
@@ -88,7 +88,7 @@ router.get("/", async (req, res) => {
         });
 
         results = [...results, ...allGamesArr];
-        response = await axios.get(response.data.next); //Paso a la siguiente pagina con next
+        response = await axios.get(response.data.next); //Paso a la siguiente pagina con .next
       }
 
       return res.json(results);
@@ -104,10 +104,10 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let { name, description, releaseDate, rating, genres, platforms } = req.body;
   platforms = platforms.join(", ");
-  
+
   try {
     const gameCreated = await Videogame.findOrCreate({
-      //devuelvo un array (OJOOO!!!!)
+      //devuelvo un array
       where: {
         name,
         description,
@@ -118,7 +118,7 @@ router.post("/", async (req, res) => {
     });
     await gameCreated[0].setGenres(genres); // relaciono ID genres al juego creado
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
   res.send("Created succesfully, saludos desde el BACK!!");
 });
