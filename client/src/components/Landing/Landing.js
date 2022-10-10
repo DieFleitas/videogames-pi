@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import style from './Landing.module.css'
+import style from "./Landing.module.css";
 
 export default function Landing() {
   return (
@@ -7,10 +7,9 @@ export default function Landing() {
       <div className={style.content}>
         <h1 className={style.title}>Explora Los Mejores Videojuegos</h1>
         <Link to="/videogames">
-        <button className={style.btn}>Explorar</button>
-      </Link>
+          <button className={style.btn}>Explorar</button>
+        </Link>
       </div>
-      
     </div>
   );
 }

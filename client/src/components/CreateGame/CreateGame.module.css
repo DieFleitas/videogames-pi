@@ -1,0 +1,61 @@
+
+
+.subcontainer {
+    padding: 10px;
+}
+
+.formContainer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInputs {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 90%;
+}
+
+.formText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nameInput, .description, .releaseInput, .ratingInput {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.formChecks{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.genresContainer {
+    flex: 1;
+}
+
+.platsContainer {
+    flex: 1;
+}
+
+button {
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+}

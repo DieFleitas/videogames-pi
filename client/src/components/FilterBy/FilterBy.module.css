@@ -1,0 +1,22 @@
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subcontainer {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selectCont {
+    width: 30%;
+    padding: 15px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
