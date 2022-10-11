@@ -116,7 +116,9 @@ router.post("/", async (req, res) => {
         platforms,
       },
     });
-    await gameCreated[0].setGenres(genres); // relaciono ID genres al juego creado
+    const genresDb = await Genre.findAll({ where: {name: genres}})
+    
+    await gameCreated[0].setGenres(genresDb); // relaciono ID genres al juego creado
   } catch (err) {
     console.error(err);
   }

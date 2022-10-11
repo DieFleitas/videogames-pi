@@ -178,7 +178,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Action"
-                          value="2"
+                          value="Action"
                           type="checkbox"
                           id="Action"
                         />
@@ -188,7 +188,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Indie"
-                          value="1"
+                          value="Indie"
                           type="checkbox"
                           id="Indie"
                         />
@@ -198,7 +198,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Adventure"
-                          value="3"
+                          value="Adventure"
                           type="checkbox"
                           id="Adventure"
                         />
@@ -206,14 +206,14 @@ function CreateGame(props) {
                       </div>
 
                       <div>
-                        <input name="RPG" value="4" type="checkbox" id="RPG" />
+                        <input name="RPG" value="RPG" type="checkbox" id="RPG" />
                         <label htmlFor="RPG">RPG.</label>
                       </div>
 
                       <div>
                         <input
                           name="Strategy"
-                          value="5"
+                          value="Strategy"
                           type="checkbox"
                           id="Strategy"
                         />
@@ -223,7 +223,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Shooter"
-                          value="6"
+                          value="Shooter"
                           type="checkbox"
                           id="Shooter"
                         />
@@ -233,7 +233,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Casual"
-                          value="7"
+                          value="Casual"
                           type="checkbox"
                           id="Casual"
                         />
@@ -243,7 +243,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Simulation"
-                          value="8"
+                          value="Simulation"
                           type="checkbox"
                           id="Simulation"
                         />
@@ -253,7 +253,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Puzzle"
-                          value="9"
+                          value="Puzzle"
                           type="checkbox"
                           id="Puzzle"
                         />
@@ -263,7 +263,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Arcade"
-                          value="10"
+                          value="Arcade"
                           type="checkbox"
                           id="Arcade"
                         />
@@ -273,7 +273,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Platformer"
-                          value="11"
+                          value="Platformer"
                           type="checkbox"
                           id="Platformer"
                         />
@@ -283,7 +283,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Racing"
-                          value="12"
+                          value="Racing"
                           type="checkbox"
                           id="Racing"
                         />
@@ -293,7 +293,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Massively-Multiplayer"
-                          value="13"
+                          value="Massively-Multiplayer"
                           type="checkbox"
                           id="Massively-Multiplayer"
                         />
@@ -305,7 +305,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Sports"
-                          value="14"
+                          value="Sports"
                           type="checkbox"
                           id="Sports"
                         />
@@ -315,7 +315,7 @@ function CreateGame(props) {
                       <div>
                         <input
                           name="Fighting"
-                          value="15"
+                          value="Fighting"
                           type="checkbox"
                           id="Fighting"
                         />

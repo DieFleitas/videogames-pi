@@ -8,13 +8,11 @@ import {
   FILTER_BY,
 } from "../actionTypes/actionTypes.js";
 
-
 // Trae todos los juegos (DB + API)
 export function getAllGames() {
   return async function (dispatch) {
     try {
-      const res = await axios
-        .get("http://localhost:3001/videogames/");
+      const res = await axios.get("http://localhost:3001/videogames/");
       dispatch({ type: GET_ALL_GAMES, payload: res.data });
     } catch (err) {
       return err;
@@ -26,8 +24,9 @@ export function getAllGames() {
 export function searchByName(name) {
   return async function (dispatch) {
     try {
-      const res = await axios
-        .get(`http://localhost:3001/videogames?name=${name}`);
+      const res = await axios.get(
+        `http://localhost:3001/videogames?name=${name}`
+      );
       dispatch({ type: SEARCH_BY_NAME, payload: res.data });
     } catch (err) {
       return err;
