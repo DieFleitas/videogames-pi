@@ -12,7 +12,7 @@ function SearchBar({ searchByName, getAllGames }) {
 
   const handleInputChange = function (e) {
     setInput({
-      [e.target.name]: e.target.value,
+      buscar: e.target.value,
     });
   };
 

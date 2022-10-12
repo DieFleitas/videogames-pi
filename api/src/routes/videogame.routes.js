@@ -51,7 +51,7 @@ router.get("/:idVideogame", async (req, res) => {
       genres = genres.map((genre) => genre.name); // de la API me trae un array de objetos, mapeo solo el nombre del genero
       platforms = platforms.map((p) => p.platform.name); // de la API me trae un array de objetos, mapeo solo el nombre de la plataforma
 
-      return res.json({
+      const videogame = {
         id,
         name,
         background_image,
@@ -60,8 +60,9 @@ router.get("/:idVideogame", async (req, res) => {
         releaseDate,
         rating,
         platforms,
-      });
-
+      };
+      
+      return res.json(videogame);
     } catch (err) {
       return console.error(err.message);
     }

@@ -37,6 +37,7 @@ function FilteredBy({ orderBy, genres, filterBy }) {
               ))}
           </optgroup>
         </select>
+        
         <select className={style.selectCont} onChange={filterByOrder}>
           <option value="default">ORDEN...</option>
 

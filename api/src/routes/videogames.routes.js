@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   //Busco en la base de datos si tengo juegos creados y me traigo todos en formato raw json
   let videogames = await Videogame.findAll({
     include: Genre,
-  });
+  }); // instancia de sequelize
 
   //Parseo el objeto a string y luego lo parseo a un objeto de js
   videogames = JSON.parse(JSON.stringify(videogames));
@@ -116,13 +116,13 @@ router.post("/", async (req, res) => {
         platforms,
       },
     });
-    const genresDb = await Genre.findAll({ where: {name: genres}})
-    
-    await gameCreated[0].setGenres(genresDb); // relaciono ID genres al juego creado
+    const genresDb = await Genre.findAll({ where: { name: genres } }); // traigo el/los generos cde el juego creado
+
+    await gameCreated[0].setGenres(genresDb); // relaciono generos al juego creado
   } catch (err) {
     console.error(err);
   }
-  res.send("Created succesfully, saludos desde el BACK!!");
+  res.send("Created succesfully");
 });
 
 module.exports = router;

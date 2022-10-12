@@ -36,7 +36,11 @@ function GameDetails(props) {
               </div>
             ) : (
               <div className={style.imgDiv}>
-                <img className={style.img} src="https://via.placeholder.com/150" alt="Videogame"></img>
+                <img
+                  className={style.img}
+                  src="https://via.placeholder.com/150"
+                  alt="Videogame"
+                ></img>
               </div>
             )}
 
@@ -54,34 +58,31 @@ function GameDetails(props) {
               gameDetails.genres &&
               gameDetails.platforms ? (
                 <div className={style.descriptionContainer}>
-                  {
-                    <p className={style.description}>
-                      {/*regexp para sacar los elementos html e.g. <p></p>*/}
-                      {gameDetails.description.replace(/(<([^>]+)>)/gi, "")}
-                    </p>
-                  }
-                  {
-                    <p className={style.genres}>
-                      <strong>Genres</strong>:{" "}
-                      {`${gameDetails.genres.join(", ")}`}
-                    </p>
-                  }
-                  {
-                    <p className={style.platforms}>
-                      <strong>Platforms</strong>:{" "}
-                      {`${
-                        typeof gameDetails.platforms === "string"
-                          ? gameDetails.platforms
-                          : gameDetails.platforms.join(", ")
-                      }`}
-                    </p>
-                  }
+                  <p className={style.description}>
+                    {/*regexp para sacar los elementos html e.g. <p></p>*/}
+                    {gameDetails.description.replace(/(<([^>]+)>)/gi, "")}
+                  </p>
+
+                  <p className={style.genres}>
+                    <strong>Genres</strong>:{" "}
+                    {`${gameDetails.genres.join(", ")}`}
+                  </p>
+
+                  <p className={style.platforms}>
+                    <strong>Platforms</strong>:{" "}
+                    {`${
+                      typeof gameDetails.platforms === "string"
+                        ? gameDetails.platforms
+                        : gameDetails.platforms.join(", ")
+                    }`}
+                  </p>
+
                   <NavLink to="/videogames">
                     <button className={style.btn}>Volver</button>
                   </NavLink>
                 </div>
               ) : (
-                <h1>Cargando</h1>
+                <h1>Cargando...</h1>
               )}
             </div>
           </div>
