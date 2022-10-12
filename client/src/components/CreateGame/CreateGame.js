@@ -174,7 +174,7 @@ function CreateGame(props) {
                       <strong>Genres:</strong>
                     </label>
 
-                    <div id="genres" className="genresChecks">
+                    <div id="genres">
                       <div>
                         <input
                           name="Action"

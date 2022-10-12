@@ -11,7 +11,7 @@ const router = Router();
 //-----> GET  "/videogames" <--------
 
 router.get("/", async (req, res) => {
-  //Busco en la base de datos si tengo juegos creados y me traigo todos en formato raw json
+  //Busco en la base de datos si tengo juegos creados y me traigo todos
   let videogames = await Videogame.findAll({
     include: Genre,
   }); // instancia de sequelize
