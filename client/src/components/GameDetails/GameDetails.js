@@ -2,27 +2,32 @@ import { React, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { getVideogameDetail } from "../../redux/actions/action";
+import { getVideogameDetail, cleanDetails } from "../../redux/actions/action";
 
 import Navbar from "../Navbar/Navbar";
 
 import style from "./GameDetails.module.css";
 
 function GameDetails(props) {
-  const { getVideogameDetail, gameDetails } = props;
+  const { getVideogameDetail, cleanDetails, gameDetails } = props;
   const { idVideogame } = props.match.params;
 
   // me carga los detalles del juego
   useEffect(() => {
+    cleanDetails()
     getVideogameDetail(idVideogame);
-  }, [getVideogameDetail, idVideogame]);
+  }, [cleanDetails, getVideogameDetail, idVideogame]);
+
+  const array = Object.keys(gameDetails)
+
 
   return (
     <div className={style.container}>
       <Navbar />
 
+
       <div className={style.detailsContainer}>
-        {gameDetails ? (
+        {array.length ? (
           <div className={style.details}>
             <h3 className={style.title}>{gameDetails.name}</h3>
 
@@ -100,4 +105,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getVideogameDetail })(GameDetails);
+export default connect(mapStateToProps, { getVideogameDetail, cleanDetails })(GameDetails);

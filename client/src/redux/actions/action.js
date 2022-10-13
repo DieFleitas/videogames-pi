@@ -6,6 +6,7 @@ import {
   GET_GENRES,
   ORDER_BY,
   FILTER_BY,
+  CLEAN_DETAILS
 } from "../actionTypes/actionTypes.js";
 
 // Trae todos los juegos (DB + API)
@@ -74,4 +75,10 @@ export function filterBy(order) {
   return function (dispatch) {
     dispatch({ type: FILTER_BY, payload: order });
   };
+}
+
+export function cleanDetails(){
+  return function(dispatch) {
+    dispatch({type: CLEAN_DETAILS})
+  }
 }

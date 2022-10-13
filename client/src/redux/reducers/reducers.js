@@ -5,6 +5,7 @@ import {
   GET_GENRES,
   ORDER_BY,
   FILTER_BY,
+  CLEAN_DETAILS
 } from "../actionTypes/actionTypes.js";
 
 const initialState = {
@@ -29,6 +30,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         gameDetails: action.payload,
       };
+
+    case CLEAN_DETAILS:
+      return {
+        ...state,
+        gameDetails: {}
+      }
 
     case SEARCH_BY_NAME:
       return {
